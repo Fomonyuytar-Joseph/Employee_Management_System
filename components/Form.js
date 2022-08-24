@@ -8,8 +8,12 @@ import UpdateUserForm from "./UpdateUserForm";
 
 function Form() {
 
+    const flag=true
+
     return(
-        <AddUserForm/>
+        <div className="container mx-auto ">
+      {flag? <AddUserForm/>: <UpdateUserForm/>}
+        </div>
 
     )
 

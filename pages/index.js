@@ -2,8 +2,19 @@ import Head from "next/head";
 import { FiUserPlus } from "react-icons/fi";
 import Table from "../components/table";
 import Form from "../components/Form";
+import { useState } from "react";
+
 
 export default function Home() {
+
+  const [visible, setVisible] = useState(false);
+
+  const handler =()=>{
+
+       setVisible(!visible)    
+    // setVisible(visible ? false : true)
+
+  }
   return (
     <section>
       <Head>
@@ -19,8 +30,8 @@ export default function Home() {
 
         <div className="container mx-auto flex justify-between py-5 border-b">
           <div className="left flex-gap-3">
-            <button className="flex bg-indigo-500 text-white px-4 py-2 border rounded-md hover:bg-grary-50 hover:border-indigo-500 hover:text-gray-800">
-              Add Employee{" "}
+            <button onClick={handler} className="flex bg-indigo-500 text-white px-4 py-2 border rounded-md hover:bg-grary-50 hover:border-indigo-500 hover:text-gray-800">
+              Add Employee
               <span className="px-2">
                 <FiUserPlus size={23} />
               </span>
@@ -29,9 +40,11 @@ export default function Home() {
         </div>
 
         {/* collapsable form */}
-        <div className="container mx-auto ">
-          <Form />
-        </div>
+      
+          {
+            visible ? <Form/>:<></>
+          }
+       
 
         {/* table */}
         <div className="container mx-auto ">
