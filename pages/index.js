@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import {FiUserPlus } from 'react-icons/fi'
+import Table from '../components/table'
 
 
 export default function Home() {
@@ -26,9 +27,14 @@ export default function Home() {
       </div>
       {/* collapsable form */}
 
-      {/* table */}
+     
+     
 
     </div>
+       {/* table */}
+      <div className="container mx-auto">
+      <Table></Table>
+      </div>
        
       </main>
 
